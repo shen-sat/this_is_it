@@ -1,5 +1,5 @@
 class InputCheck
-	attr_reader :plateau_x, :plateau_y, :start_pos_x, :start_pos_y, :start_pos_direction
+	attr_reader :plateau_x, :plateau_y, :start_pos_x, :start_pos_y, :start_pos_direction, :instructions
 
 	def plateau_check(string)
 		if !string.match(/^\d\s\d$/)
@@ -21,8 +21,10 @@ class InputCheck
 	end
 
 	def instructions_check(string)
-		if !string.match(/A-Z+/)
+		if !string.match(/^[LMRlmr]+$/)
 			raise "incorrect instructions"
+		else
+			@instructions = string.split("").map {|letter| letter.upcase}
 		end
 	end
 

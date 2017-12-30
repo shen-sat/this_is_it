@@ -81,6 +81,19 @@ describe 'instruction input check' do
 	it 'should only accept letters LMR with no spaces anywhere' do 
 		input_check = InputCheck.new
 		expect{input_check.instructions_check("L M R")}.to raise_error("incorrect instructions")
+		expect{input_check.instructions_check("ABC")}.to raise_error("incorrect instructions")
+		expect{input_check.instructions_check("123")}.to raise_error("incorrect instructions")
+	end
 
+	it 'should assign LMR as ["L", "M", "R"] to instructions' do 
+		input_check = InputCheck.new
+		input_check.instructions_check("LMR")
+		expect(input_check.instructions).to eq(["L", "M", "R"])
+	end
+
+	it 'should accept small caps' do 
+		input_check = InputCheck.new
+		input_check.instructions_check("lmr")
+		expect(input_check.instructions).to eq(["L", "M", "R"])
 	end  
 end
