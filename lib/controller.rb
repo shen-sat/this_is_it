@@ -1,3 +1,5 @@
+
+
 class Controller
 	attr_accessor :plateau, :rover
 
@@ -15,5 +17,10 @@ class Controller
 		input_check.instructions_check(letters)
 		@rover = Rover.new(input_check.start_pos_x, input_check.start_pos_y, input_check.start_pos_direction, input_check.instructions)
 		@rover.move
+	end
+
+	def run
+		puts "Welcome. Please enter rover data:"
+		read_plateau(gets.chomp)
 	end
 end
