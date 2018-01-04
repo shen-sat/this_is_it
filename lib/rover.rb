@@ -24,9 +24,10 @@ class Rover
 					@x -= 1 if direction == "W"
 			end
 		end
-
-		def final_position
-			return "#{x}#{y}#{direction}"
-		end
 	end
+
+	def final_position
+		return "#{x}#{y}#{direction}"
+	end
+
 end
