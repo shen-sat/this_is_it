@@ -8,6 +8,7 @@ describe 'application' do
 			stdin.puts("5 5")
 			stdin.puts("1 2 N")
 			stdin.puts("LMLMLMLMM")
+			stdin.puts("")
 			text_to_console = "Welcome. Please enter rover data:\n" + "13N\n"
 			expect(stdout.read).to eq(text_to_console)
 		end
@@ -15,7 +16,7 @@ describe 'application' do
 		
 	end
 
-		it 'should run with one input' do
+		it 'should run with two inputs' do
 		Open3.popen3('ruby application.rb') do |stdin, stdout, stderr, wait_thr|
 			stdin.puts("5 5")
 			stdin.puts("1 2 N")

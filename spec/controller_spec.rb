@@ -1,6 +1,6 @@
 require 'controller'
 require 'plateau'
-
+=begin
 describe 'controller' do
 	it 'should create a plateau object with x and y variables' do 
 		controller = Controller.new
@@ -14,4 +14,5 @@ describe 'controller' do
 		controller.read_commands("1 2 N", "LMLMLMLMM")
 		expect(controller.rover.final_position).to eq("13N")
 	end
-end
+end]
+=end
